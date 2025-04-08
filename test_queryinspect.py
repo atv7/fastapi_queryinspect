@@ -63,11 +63,6 @@ class TestQueryInspect(unittest.TestCase):
 
                 return "Reads and writes"
 
-        @cls.app.get("/slow")
-        async def slow():
-            time.sleep(0.1)
-            return "Slow request"
-
         cls.client = TestClient(cls.app)
 
     def test_noqueries(self):
@@ -82,22 +77,7 @@ class TestQueryInspect(unittest.TestCase):
         log.debug(res.headers)
         header = res.headers.get("x-queryinspect-combined")
         self.assertIsNotNone(header)
-        # self.assertTrue(header.startswith("reads=1,writes=1"))
-
-    def test_rtime(self):
-        self.queryinspect.configure(
-            QUERYINSPECT_HEADERS_COMBINED=False,
-        )
-
-        res = self.client.get("/slow")
-        log.debug(res.headers)
-        r_time = float(
-            res.headers.get("x-queryinspect-total-request-time", "0")
-        )
-        log.debug("r_time: %r", r_time)
-        self.assertTrue(90.0 < r_time < 200.0)
-
-        self.queryinspect.configure(QUERYINSPECT_HEADERS_COMBINED=True)
+        self.assertTrue(header.startswith("reads=1,writes=1"))
 
 
 if __name__ == "__main__":

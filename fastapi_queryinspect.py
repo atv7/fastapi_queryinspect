@@ -169,28 +169,11 @@ class QueryInspect:
                     )
 
         if self._config.get("QUERYINSPECT_HEADERS"):
-            if self._config.get("QUERYINSPECT_HEADERS_COMBINED"):
-                response.headers["x-queryinspect-combined"] = (
-                    f"reads={qi_data['reads']},"
-                    f"writes={qi_data['writes']},"
-                    f"conns={qi_data['conns']},"
-                    f"rtime={qi_data['r_time_ms']}ms"
-                )
-            else:
-                response.headers["x-queryinspect-total-request-time"] = str(
-                    qi_data["r_time_ms"]
-                )
-                response.headers["x-queryinspect-total-query-time"] = str(
-                    qi_data["q_time_ms"]
-                )
-                response.headers["x-queryinspect-read-count"] = str(
-                    qi_data["reads"]
-                )
-                response.headers["x-queryinspect-write-count"] = str(
-                    qi_data["writes"]
-                )
-                response.headers["x-queryinspect-connection-count"] = str(
-                    qi_data["conns"]
-                )
+            response.headers["x-queryinspect-combined"] = (
+                f"reads={qi_data['reads']},"
+                f"writes={qi_data['writes']},"
+                f"conns={qi_data['conns']},"
+                f"rtime={qi_data['r_time_ms']}ms"
+            )
 
         return response
