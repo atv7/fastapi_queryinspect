@@ -9,16 +9,19 @@ It tracks query performance, identifies slow queries and duplicate table access,
 and works with SQLAlchemy to offer detailed timing stats and request-level SQL insights.
 Source: https://github.com/atv7/fastapi_queryinspect
 """
+with open("README.md", "r") as f:
+    description = f.read()
 
 setup(
     name="fastapi-queryinspect",
-    version="0.1.0",
+    version="0.1.1",
     url="https://github.com/atv7/fastapi_queryinspect",
     license="MIT",
     author="Artem",
     author_email="ateter17@gmail.com",
     description="FastAPI middleware to provide metrics on SQL queries per request.",
-    long_description=__doc__,
+    long_description=description,
+    long_description_content_type="text/markdown",
     py_modules=["fastapi_queryinspect"],
     include_package_data=True,
     zip_safe=False,
