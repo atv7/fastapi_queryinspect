@@ -14,12 +14,12 @@ with open("README.md", "r") as f:
 
 setup(
     name="fastapi-queryinspect",
-    version="0.1.3",
+    version="0.1.4",
     url="https://github.com/atv7/fastapi_queryinspect",
     license="MIT",
     author="Artem",
     author_email="ateter17@gmail.com",
-    description="FastAPI middleware to provide metrics on SQL queries per request.",
+    description="FastAPI extension to provide metrics on SQL queries per request.",
     long_description=description,
     long_description_content_type="text/markdown",
     py_modules=["fastapi_queryinspect"],
