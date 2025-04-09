@@ -5,7 +5,7 @@ per request, inspired by Flask-QueryInspect (https://github.com/noise/flask-quer
 Django-QueryInspect (https://github.com/dobarkod/django-queryinspect).
 It tracks query performance, identifies slow queries and duplicate table access,
 and works with SQLAlchemy to offer detailed timing stats and request-level SQL insights
-
+source https://github.com/atv7/fastapi_queryinspect/tree/main
 # Installation #
 
 ```
