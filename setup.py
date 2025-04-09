@@ -14,7 +14,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="fastapi-queryinspect",
-    version="0.1.1",
+    version="0.1.3",
     url="https://github.com/atv7/fastapi_queryinspect",
     license="MIT",
     author="Artem",
