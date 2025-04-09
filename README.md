@@ -9,6 +9,7 @@ and works with SQLAlchemy to offer detailed timing stats and request-level SQL i
 # Installation #
 
 ```
+pip install fastapi-queryinspect
 ```
 
 ## Usage ##
